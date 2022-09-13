@@ -12,93 +12,143 @@
             <li><a href="https://www.kubsu.ru/#section-content">ссылку на фрагмент страницы некоторого сайта</a></li>
             <li><a href="#first">ссылку на фрагмент текущей страницы</a></li>
             <li><a href="https://www.example.com?kek=898&lol=ppp">ссылку с двумя параметрами в URL</a></li>
-            <html>
 
-  <head>
-    <title>Форма для заполнения</title>
-  </head>
+            <li>
+              <ol>
+                <li><a href="#first">Начало страницы</a></li>
+                <li><a href="#">Главная</a></li>
+              </ol>
+            </li>
+	          <li><a>Ссылка без href</a></li>
+	          <li><a href="">Ссылка с пустым href</a></li>
+	          <li><a href="https://www.example.com" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
+	          <li><a href="https://www.example.com" rel="noindex">ссылка запрещенную для индексации поисковиками</a></li>
+            <li><h3>контекстную в тексте абзаца</h3>
+              <p>
+                <a href="https://www.example.com">Example.com</a> является сайтом заглушкой.
+              </p>
+            </li>
+          <li><a href="https://www.example.com"><img src="image.jpeg" width="50" height="50" alt="cat"></a></li>
+          
+          <li>
+            <img src="image2.png" width="400" height="400" usemap="#navigation" alt="map">
+            <map name="navigation">
+              <area shape="circle"
+                  coords="400,400,200"
+                  href="https://ast.ru/news/literaturnye-kotiki-ne-menee-milye-i-umnye-chem-nastoyashchie/"
+                  alt="circle">
+              <area shape="rect"
+                coords="0,0,200,200"
+                href="https://www.example.com"
+                alt="rectangle">
+            </map>
+          </li>
+	      <li><a href="example.html">относительную на страницу в текущем каталоге</a></li>
+	      <li><a href="about/contacts.html">относительную на страницу в каталоге aboutt</a></li>
+	      <li><a href="./some_file.html">относительную на страницу в каталоге уровнем выше текущего</a></li>
+	      <li><a href="././random.html">относительную на страницу в каталоге двумя уровнями выше</a></li>
+	      <li><a href="/">сокращенную на главную</a></li>
+	      <li><a href="/example.html"> сокращенную ссылку на внутреннюю</a></li>
 
-  <body>
+        </ol>
+
 
     <h2>Форма для заполнения</h2>
 
-    <form action="/"
-      method="POST">
+    <form action="/" method="POST">
 
       <label>
-        Введите ваше имя:<br />
+        Введите ваше имя:<br/>
         <input name="field-name-1"
-          placeholder="Ваше имя" />
-      </label><br />
+          placeholder="Ваше имя" 
+        />
+      </label>
+      
+      <br/>
       <label>
         Текстовое поле email:<br />
         <input name="field-email"
           type="email"
-          placeholder="email" />
-      </label><br />
+          placeholder="email" 
+        />
+      </label>
+      <br />
 
       <label>
         Дата рождения:<br />
         <input name="field-date"
           value="2019-08-13"
-          type="date" />
-      </label><br />
+          type="date"
+        />
+      </label>
+      <br />
 
       Пол:<br />
-      <label><input type="radio" checked="checked"
-        name="radio-group-1" value="Значение1" />
-        Мужской</label>
-      <label><input type="radio"
-        name="radio-group-1" value="Значение2" />
-        Женский</label><br />
+      
+      <label>
+        <input 
+        type="radio" checked="checked"
+        name="sex" value="male" 
+        />
+        Мужской
+      </label>
+      <label>
+        <input type="radio"
+        name="sex" value="female" 
+        />
+        Женский
+      </label>
+      <br />
 
-        Количество конечностей:<br />
-      <label><input type="radio" checked="checked"
-        name="radio-group-1" value="Значение1" />
-        1</label>
-      <label><input type="radio"
-        name="radio-group-1" value="Значение2" />
-        2</label><br />
-        <label><input type="radio"
-            name="radio-group-1" value="Значение3" />
-            3</label><br />
-
+      Количество конечностей:<br />
+      <label>
+        <input type="radio" checked="checked"
+        name="limbs" value="1" 
+        />1</label>
+      <label>
+        <input type="radio"
+        name="limbs" value="2" 
+        />2</label>
+      <label>
+        <input type="radio"
+          name="limbs" value="3" 
+          />3</label>
+      <label>
+        <input type="radio"
+         name="limbs" value="4" 
+          />4</label>
+      
+      <br />
 
       <label>
-        Список (combobox):<br />
-        <select name="field-name-3">
-          <option value="Значение1">Метка1</option>
-          <option value="Значение2" selected="selected">Метка2</option>
-          <option value="Значение3">Метка3</option>
-        </select>
-      </label><br />
-
-      <label>
-        Список (listbox с множественным выбором):
+        сверхспособности (множественный выбор):
         <br />
-        <select name="field-name-4[]"
+        <select name="superpowers[]"
           multiple="multiple">
-          <option value="Значение1">Метка1</option>
-          <option value="Значение2" selected="selected">Метка2</option>
-          <option value="Значение3" selected="selected">Метка3</option>
+          <option value="immortal">Бессмертие</option>
+          <option value="walls" selected="selected">Хождение сквозь стены</option>
+          <option value="levitate" selected="selected">Левитация</option>
         </select>
-      </label><br />
+      </label>
+      <br />
 
-      Чекбокс:<br />
-      <label><input type="checkbox" checked="checked"
-        name="check-1" />
-        Подпись чекбокса ставим справа</label><br />
+      <label>
+        Биография:
+        <br /> 
+        <textarea name="bio">Давным-давно</textarea>
+      </label>
+      <br />
 
-      Отправить данные:
+      
+      <label>
+        Чекбокс:<br />
+        <input type="checkbox" checked="checked"
+        name="agree" />
+        с <a href="/contract.txt">контрактом</a> ознакомлен (а)
+      </label>
+      <br />
+
       <input type="submit" value="Отправить" />
     </form>
-
-  </body>
-
-</html> 
-
-        </ol>
     </body>
-
-
 </html>
